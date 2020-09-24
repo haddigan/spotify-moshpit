@@ -1,0 +1,35 @@
+{
+    "paths": [
+        {
+            "name": "/search",
+            "lambdaFunction": "spotifyLambda",
+            "privacy": {
+                "open": true
+            },
+            "policyResourceName": "/search"
+        }
+    ],
+    "resourceName": "spotifyAPI",
+    "apiName": "spotifyAPI",
+    "functionArns": [
+        {
+            "lambdaFunction": "spotifyLambda"
+        }
+    ],
+    "privacy": {
+        "auth": 0,
+        "unauth": 0,
+        "authRoleName": "amplify-spotifymoshpit-dev-155140-authRole",
+        "unAuthRoleName": "amplify-spotifymoshpit-dev-155140-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "spotifyLambda",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}

@@ -1,8 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import Amplify, { API } from "@aws-amplify/api";
+
+Amplify.configure();
 
 function App() {
+  const [result, setResult] = useState(null);
+
+  useEffect(() => {
+    const getSearchResults = async () => {
+      const searchResult = await API.get("spotifyAPI", "/search/foo");
+      setResult(searchResult);
+    };
+    getSearchResults();
+  }, [setResult]);
   return (
     <div className="App">
       <header className="App-header">
@@ -19,6 +31,7 @@ function App() {
           Learn React
         </a>
       </header>
+      <p>{JSON.stringify(result)}</p>
     </div>
   );
 }
