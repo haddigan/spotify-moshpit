@@ -69,7 +69,7 @@
 				"Timeout": "25",
 				"Code": {
 					"S3Bucket": "amplify-spotifymoshpit-dev-155140-deployment",
-					"S3Key": "amplify-builds/spotifyLambda-4b3773314d6437686b42-build.zip"
+					"S3Key": "amplify-builds/spotifyLambda-626978754178697a4c72-build.zip"
 				}
 			}
 		},

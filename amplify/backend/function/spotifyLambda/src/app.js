@@ -14,6 +14,10 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var awsServerlessExpressMiddleware = require("aws-serverless-express/middleware");
 
+const clientId = "1e831e30d05b48929899f656795c2a5f";
+const clientSecret = "6a55589b29d146f8b17dc84ffc0bb3dc";
+const scopes = "user-read-private user-read-email";
+
 // declare a new express app
 var app = express();
 app.use(bodyParser.json());
@@ -29,9 +33,10 @@ app.use(function (req, res, next) {
   next();
 });
 
-/**********************
- * Example get method *
- **********************/
+app.get("/authorize", (req, res) => {
+  return [req, res];
+  // fetch(`https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=code&redirect_uri=${redirectUri}&scope=user-read-private%20user-read-email`)
+});
 
 app.get("/search/:term", function (req, res) {
   // Add your code here
