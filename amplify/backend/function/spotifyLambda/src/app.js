@@ -34,7 +34,7 @@ app.use(function (req, res, next) {
 });
 
 app.get("/authorize", (req, res) => {
-  return [req, res];
+  return JSON.stringify([req, res]);
   // fetch(`https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=code&redirect_uri=${redirectUri}&scope=user-read-private%20user-read-email`)
 });
 
