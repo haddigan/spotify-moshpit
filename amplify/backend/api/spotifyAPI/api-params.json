@@ -7,6 +7,13 @@
                 "open": true
             },
             "policyResourceName": "/search"
+        },
+        {
+            "name": "/authorize",
+            "lambdaFunction": "spotifyLambda",
+            "privacy": {
+                "open": true
+            }
         }
     ],
     "resourceName": "spotifyAPI",
@@ -31,5 +38,6 @@
                 "Arn"
             ]
         }
-    ]
+    ],
+    "uuid": "80e4d814"
 }
