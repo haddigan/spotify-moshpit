@@ -4,7 +4,7 @@ import Amplify, { API } from "@aws-amplify/api";
 
 Amplify.configure();
 
-const clientId = "1e831e30d05b48929899f656795c2a5f";
+const clientId = process.env.REACT_APP_CLIENT_ID;
 const scopes = "user-read-private user-read-email";
 const redirectUri = `${window.location.href}`;
 
